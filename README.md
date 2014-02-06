@@ -19,5 +19,4 @@ If you have any comments or want to contact me:
 
 === Change Log ===
 
-= v.1.0 2014-20-02 =
-Release date
+= v.1.0 2014-20-00 =
