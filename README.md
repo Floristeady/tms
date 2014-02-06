@@ -1,4 +1,4 @@
-=== The Mama Store Theme ===
+=== TMS Theme ===
 
 Designed and programmed by: Florencia Rosenfeld
 
@@ -9,7 +9,7 @@ Tags: html5, boilerplate, responsive web design, media queries, two menus, sideb
 
 == Description ==
 	
-The Mama Store Theme is created as a starting point for Wordpress Themes.
+TMS 
 
 The theme options are in English and Spanish, apologies for any errors in translation.
 
