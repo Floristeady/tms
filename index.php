@@ -15,6 +15,8 @@ get_header(); ?>
 		<?php
 			if ( have_posts() ) :
 				// Start the Loop.
+				
+				echo '<div class="blog-content">';
 				while ( have_posts() ) : the_post();
 
 					/*
@@ -25,6 +27,7 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 
 				endwhile;
+				echo '</div>';
 				// Previous/next post navigation.
 				themamastore_paging_nav();
 

@@ -15,8 +15,6 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * Used to set the width of images and content. Should be equal to the width the theme
- * is designed for, generally via the style.css stylesheet.
  */
 if ( ! isset( $content_width ) )
 	$content_width = 1024;
@@ -47,8 +45,10 @@ function themamastore_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 378, 999, false);
-	add_image_size( 'themamastore-full-width', 1024, 576, true );
 	add_image_size( 'themamastore-sigle-width', 768, 420, false );
+	add_image_size( 'themamastore-home-width', 466, 352, true );
+	add_image_size( 'themamastore-second-width', 250, 212, true );
+	add_image_size( 'themamastore-third-width', 250, 130, true );
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory

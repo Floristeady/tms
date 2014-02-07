@@ -33,6 +33,16 @@ body {
 	background-color: #fff;
     font-size: 100%;
     line-height: 1.4;
+    
+    background: #f7f8f5; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #f7f8f5 0%, #f9f7ef 27%, #faf4e7 67%, #f0eada 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f7f8f5), color-stop(27%,#f9f7ef), color-stop(67%,#faf4e7), color-stop(100%,#f0eada)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #f7f8f5 0%,#f9f7ef 27%,#faf4e7 67%,#f0eada 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #f7f8f5 0%,#f9f7ef 27%,#faf4e7 67%,#f0eada 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #f7f8f5 0%,#f9f7ef 27%,#faf4e7 67%,#f0eada 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #f7f8f5 0%,#f9f7ef 27%,#faf4e7 67%,#f0eada 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f8f5', endColorstr='#f0eada',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 
@@ -542,7 +552,6 @@ span + .edit-link:before,
 	margin: 0 auto;
 }
 
-
 /* 3. Typography
   ========================================================================== */
   
@@ -640,6 +649,7 @@ a.red {color: #bd2d46;}
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 	z-index: 1;
 	position: relative;
+	background-color: #fff;
 }
 
 #site-title {
@@ -675,10 +685,6 @@ a.red {color: #bd2d46;}
     clear: both;
     text-transform: uppercase;
     padding: 1em 0;
-}
-
-#site-title h2:after {
-	
 }
 
 .home #site-title h2 {
@@ -744,14 +750,18 @@ nav#access a:hover {
 	color: #F6A030 !important;
 }
 
-nav#access li.current-menu-item a, 
-nav#access li.current_page_item a, 
-nav#access li.current-page-ancestor a {
-	color: #F6A030;
+nav#access li.current-menu-item > a, 
+nav#access li.current_page_item > a, 
+/*nav#access li.current-menu-parent > a,*/
+/*nav#access li.current_page_parent > a,*/
+nav#access li.current-page-ancestor > a {
+	color: #F6A030 !important;
 	border-right: none !important;
 }
 
 nav#access li.current-menu-item, 
+/*nav#access li.current-menu-parent,*/
+/*nav#access li.current_page_parent,*/
 nav#access li.current_page_item, 
 nav#access li.current-page-ancestor{
 	background-color: #faf9f6;
@@ -795,6 +805,10 @@ nav#access ul.sub-menu > li {
 nav#access ul.sub-menu > li > a {
 	color:#83827f;
 	text-transform: uppercase;
+}
+
+nav#access ul.sub-menu li.current-menu-item a {
+	color:#f6a02f;
 }
 
 /*
@@ -845,7 +859,8 @@ nav#nav-2 ul li a:hover {
 	margin-top: 0px;
 	position: relative;
 	z-index: 0;
-	padding: 10px 0;
+	padding: 14px 0 8px;
+	text-transform: uppercase;
 }
  
 #breadcrumbs p {
@@ -867,6 +882,21 @@ nav#nav-2 ul li a:hover {
 
 #breadcrumbs .current {
 	font-size: 1.4em;
+	font-weight: 600;
+}
+
+#breadcrumbs .cat {
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+.single #breadcrumbs .cat a {
+	/*color:#f6a02f;*/
+}
+
+.single #breadcrumbs .current {
+	font-size: 1em;
+	font-weight: 400;
 }
 
 /*
@@ -962,8 +992,7 @@ nav#nav-2 ul li a:hover {
 /* Paging Navigation */
 
 .paging-navigation {
-	border-top: 5px solid #000;
-	margin: 48px 0;
+	margin: 0px 0 1em;
 }
 
 .paging-navigation .loop-pagination {
@@ -972,12 +1001,14 @@ nav#nav-2 ul li a:hover {
 }
 
 .paging-navigation .page-numbers {
-	border-top: 5px solid transparent;
+	background-color: #b2afac;
+	color: #fff;
 	display: inline-block;
-	font-size: 14px;
+	font-size: 0.9em;
 	font-weight: 900;
 	margin-right: 1px;
-	padding: 7px 16px;
+	padding: 4px 10px;
+	font-family: 'Roboto Slab', serif;
 	text-transform: uppercase;
 }
 
@@ -986,12 +1017,12 @@ nav#nav-2 ul li a:hover {
 }
 
 .paging-navigation .page-numbers.current {
-	border-top: 5px solid #24890d;
+	background-color: #f6a02f;
 }
 
 .paging-navigation a:hover {
-	border-top: 5px solid #41a62a;
-	color: #f6a02f;
+	background-color: #9e9d9c;
+	color: #fafafa;
 }
 
 
@@ -1025,7 +1056,7 @@ article .post-thumbnail {
 }
 
 .post-thumbnail {
-	background: #b2b2b2 url(images/elements/pattern-light.svg) repeat fixed;
+	background: #b2b2b2 url(images/elements/pattern-light.svg) repeat;
 	display: block;
 	position: relative;
 	width: 100%;
@@ -1079,16 +1110,24 @@ h1.entry-title {
 	font-family: 'Roboto Slab', serif;
 }
 
+.blog-content {
+	padding-bottom: 40px;
+}
+
 /*
  * single
  */
+ 
+.single .entry-header {
+	margin-top: 2.5em;
+}
 
 .single .entry-title {
 	margin-bottom: 5px;
 }
 
 .single .entry-meta {
-	margin: 0 0 1.4em;
+	margin: 1em 0 1.4em;
 }
 
 .single .entry-excerpt p a {
@@ -1748,53 +1787,59 @@ blockquote {
 #footer {
 	width:100%;
 	float: left;
-	margin: 40px 0px;
-	border-top: 1px solid #DDDDDD;
+	margin: 0px 0px;
+	background-color: #bd2d46;
+	background-image: url(images/elements/pattern-birds.png);
+	padding: 2.5em 0;
 }
 
-#footer-content .widget_nav_menu ul {
-	float: right;
-	list-style: none;
-	padding: 0;
-	margin: 0px;
-}
-
-#footer-content .widget_nav_menu li {
-	display: inline;
-	border-right: 1px solid #636363;
-	padding: 0px 8px 0px 6px;
-}
-
-#footer-content #nav_menu-2 li:last-child {
-	border: none;
-}
-
-#footer-content .widget_nav_menu li a {
-	color: #636363;
-	font-size: 0.82em;
-	font-weight: bold;
-}
-
-#footer-content .widget_nav_menu li a:hover {
-	text-decoration: underline;
+#footer-content {
+	width: 1024px;
+	margin: 0 auto;
 }
 
 #footer-content p, 
 #footer-content .textwidget, 
-#footer-content li {
-	color: #636363;
+#footer-content li, 
+#footer-content a,
+#footer-content h4 {
+	color: #EEEEEE;
 }
 
-#footer-content .one_third {
-	margin-right: 0px;
-	float: right;
+#footer-content p,
+#footer-content a{
+	font-weight: 200;
+	font-size: 0.95em;
+}
+
+#footer-content a:hover {
+	opacity: 0.7;
+}
+
+#footer-content h4 {
+	font-family: 'Roboto Slab';
+	font-weight: 400;
+	font-size: 1.05em;
+	text-transform: uppercase;
+}
+
+#footer-content .widget-footer ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
 }
 
 .widget-footer {
-	width: 22%;
-	padding: 2em 1%;
+	width: 20%;
+	padding: 0em 2%;
 	display: inline-block;
 	float: left;
+	border-right: 1px solid #c95568;
+	min-height: 9em;
+}
+
+.widget-footer:last-child {
+	border-right: 0;
 }
 
 

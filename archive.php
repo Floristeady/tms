@@ -15,31 +15,11 @@
 get_header(); ?>
 
 <section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content blog-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'themamastore' ), get_the_date() );
-
-						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'themamastore' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'themamastore' ) ) );
-
-						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'themamastore' ), get_the_date( _x( 'Y', 'yearly archives date format', 'themamastore' ) ) );
-
-						else :
-							_e( 'Archives', 'themamastore' );
-
-						endif;
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
+			<?php   echo '<div class="blog-content">';
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
 
@@ -51,6 +31,7 @@ get_header(); ?>
 						get_template_part( 'content', get_post_format() );
 
 					endwhile;
+					echo '</div>';
 					// Previous/next page navigation.
 					themamastore_paging_nav();
 
