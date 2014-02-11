@@ -53,7 +53,9 @@
 		</div>
 		<?php endif; ?>
 	<?php endif; ?>
-
+	
+	<?php include('inc/social-sharing.php'); ?>	
+	
 	<div class="entry-content <?php if ( !is_single() ) { echo 'list-content'; } ?>">
 		<?php if ( is_single() ) : ?>
 		<?php

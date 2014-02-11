@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: P&aacute;gina con columna derecha
+ * Template Name: P&aacute;gina General
  * @package WordPress
  * @subpackage themamastore
  * @since themamastore 1.0
@@ -25,6 +25,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 
-<?php get_sidebar('menu'); ?>
+<?php get_sidebar('page'); ?>
 
 <?php get_footer(); ?>

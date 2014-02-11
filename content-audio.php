@@ -54,7 +54,9 @@
 		<?php endif; ?>
 		<?php themamastore_post_thumbnail(); ?>
 	<?php endif; ?>
-
+	
+	<?php include('inc/social-sharing.php'); ?>	
+	
 	<div class="entry-content <?php if ( !is_single() ) { echo 'list-content'; } ?>">
 		<?php
 			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themamastore' ) );

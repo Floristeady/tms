@@ -9,10 +9,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-		// Page thumbnail and title.
+
+
+	<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
+		 if (has_excerpt()) : ?>
+		<div class="entry-excerpt">
+			<?php the_excerpt(); ?>
+		</div>
+		<?php endif; 		
 		themamastore_post_thumbnail();
-		the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
 	?>
 
 	<div class="entry-content">

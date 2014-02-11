@@ -69,17 +69,20 @@
 		<?php endif; ?>
 		<?php themamastore_post_thumbnail(); ?>
 	<?php endif; ?>
-		
+	
+	<?php include('inc/social-sharing.php'); ?>	
+	
 	<div class="entry-content <?php if ( !is_single() ) { echo 'list-content'; } ?>">
 		
-		<?php if ( is_single() ) :
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themamastore' ) );
+		<?php if ( is_single() ) : 
+		    the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themamastore' ) );
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'themamastore' ) . '</span>',
 				'after'       => '</div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
 			) );
+			
 		else : 
 			if (has_excerpt()) : 
 				$excerpt = $post->post_excerpt;

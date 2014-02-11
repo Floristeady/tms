@@ -1,7 +1,7 @@
 # Translation of TheMamaStore in Spanish (Spain)
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-02-05 18:22-0600\n"
+"PO-Revision-Date: 2014-02-10 16:51-0600\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -341,7 +341,7 @@ msgstr "Sidebar principal"
 
 #: functions.php:227
 msgid "Main Sidebar Widget"
-msgstr "Sidebar principal para widget"
+msgstr "Sidebar principal para blog"
 
 #: functions.php:236
 msgid "Secondary Sidebar"
@@ -349,7 +349,7 @@ msgstr "Sidebar Secundario"
 
 #: functions.php:238
 msgid "Secondary Sidebar Widget"
-msgstr "Sidebar secundario para widget"
+msgstr "Sidebar secundario para páginas"
 
 #: functions.php:247
 msgid "Footer Widget Area"

@@ -45,7 +45,7 @@ function themamastore_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 378, 999, false);
-	add_image_size( 'themamastore-sigle-width', 768, 420, false );
+	add_image_size( 'themamastore-single-width', 766, 530, false );
 	add_image_size( 'themamastore-home-width', 466, 352, true );
 	add_image_size( 'themamastore-second-width', 250, 212, true );
 	add_image_size( 'themamastore-third-width', 250, 130, true );
@@ -607,7 +607,7 @@ function themamastore_post_thumbnail() {
 	?>
 
 	<div class="post-thumbnail">
-	<?php the_post_thumbnail('themamastore-sigle-width'); ?>
+	<?php the_post_thumbnail('themamastore-single-width'); ?>
 	</div>
 
 	<?php else : ?>
