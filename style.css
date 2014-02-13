@@ -197,6 +197,9 @@ input[type="submit"] {
 	padding: 10px 30px 11px;
 	text-transform: uppercase;
 	vertical-align: bottom;
+	-webkit-transition: background-color .3s ease;
+	transition: background-color .3s ease; 
+	-o-transition: background-color .3s ease;
 }
 
 button:hover,
@@ -579,18 +582,17 @@ span + .edit-link:before,
   
 /*
  * Font-face
- 
-@font-face {
-    font-family: 'font-1';
-    src: url('fonts/font-1.eot');
-    src: url('fonts/font-1.eot?#iefix') format('embedded-opentype'),
-         url('fonts/font-1.woff') format('woff'),
-         url('fonts/font-1.ttf') format('truetype'),
-         url('fonts/font-1.svg#font-1') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 */
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello.eot?26060425');
+  src: url('fonts/fontello.eot?26060425#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff?26060425') format('woff'),
+       url('fonts/fontello.ttf?26060425') format('truetype'),
+       url('fonts/fontello.svg?26060425#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 p, li {
 	color: #313131;
@@ -656,7 +658,11 @@ h6 {
 /* 4. Links
   ========================================================================== */
 
-a { color: #f6a02f; text-decoration: none; }
+a { color: #f6a02f; text-decoration: none; 
+	-webkit-transition: color .4s ease;
+	transition: color .4s ease; 
+	-o-transition: color .4s ease;
+}
 a:visited { color: #f6a02f; }
 a:hover { color: #f6a02f; }
 a:focus { outline: 0; }
@@ -707,7 +713,7 @@ a.red {color: #bd2d46;}
     margin: 0px 5px;
     clear: both;
     text-transform: uppercase;
-    padding: 1em 0;
+    padding: 0.8em 0 0.9em;
 }
 
 .home #site-title h2,
@@ -808,14 +814,21 @@ nav#access li.current-page-ancestor{
 	border-right: 1px solid #d3d3d3;
 }
 
+.home nav#access ul.menu > li > a, 
+.page nav#access ul.menu > li > a {
+	border-right:none;
+}
+
 nav#access ul.sub-menu {
 	display: block;
 	background-color: #faf9f6;
 	position: absolute;
 	left: -20em;
 	top: 3em;
-	padding: 15px 10px;
+	padding: 19px 10px;
 	width: 690px;
+	margin-bottom: 0px;
+	opacity: 0;
 }
 
 .home nav#access ul.sub-menu,
@@ -849,7 +862,7 @@ nav#nav-2 {
 nav#nav-2 #menu-secondary, nav#nav-2 .menu {
 	float: left;
 	display: block;
-	margin: 0.4em 0px 0.4em;
+	margin: 0.25em 0px 0.2em;
 	width: 100%;
 }
 
@@ -870,10 +883,21 @@ nav#nav-2 ul li a {
 	color: #fff;
 	font-weight: 200;
 	text-transform: uppercase;
+	-webkit-transition: opacity .2s ease;
+	transition: opacity .2s ease; 
+	-o-transition: opacity .2s ease;
 }
 
 nav#nav-2 ul li a:hover {
-	opacity: 0.8;
+	opacity: 0.7;
+}
+
+nav#nav-2 ul > li.no-text {
+	padding: 0px;
+}
+
+nav#nav-2 .no-text a {
+	font-size: 1.5em;
 }
 
 /*
@@ -1210,16 +1234,27 @@ article {
 	position: relative;
 	border-bottom: 1px solid #bdbdbc;
 	margin-bottom: 1.4em;
-	-webkit-transition: background .3s;
-	transition: background .3s;
 }
 
 article:hover .list-title {
 	background-color: #f7ece1;
+	-webkit-transition: background-color .4s ease;
+	transition: background-color .4s ease; 
+	-o-transition: background-color .4s ease;
 }
 
 article:nth-child(3n+1):hover .list-title{
 	background-color: #af9c91;
+}
+
+a.post-thumbnail img {
+	-webkit-transition: opacity .4s ease;
+	transition: opacity .4s ease; 
+	-o-transition: opacity .4s ease;
+}
+
+a.post-thumbnail:hover img {
+	opacity: 0.85;
 }
 
 .single article {
@@ -1350,12 +1385,24 @@ h1.entry-title {
 	margin: 0 5px;
 }
 
+#collections ul.slides li a img {
+	-webkit-transition: opacity .3s ease;
+	transition: opacity .3s ease; 
+	-o-transition: opacity .3s ease;
+}
+
+#collections ul.slides li a h2 {
+	-webkit-transition: color .3s ease;
+	transition: color .3s ease; 
+	-o-transition: color .3s ease;
+}
+
 #collections ul li a:hover h2 {
 	color: #f6a02f;
 }
 
 #collections ul li a:hover img {
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 #collections ul h2:before {
@@ -1416,10 +1463,17 @@ h1.entry-title {
 	font-family: 'Roboto Slab', serif;
 	text-transform: uppercase;
 	z-index: 100;
+	-webkit-transition: width .3s ease, padding-left .3s linear;
+	transition: width .3s ease, padding-left .3s linear; 
+	-o-transition: width .3s ease, padding-left .3s linear;
+}
+
+#the-tag a {
+	color: #fff;
 }
 
 #the-tag:hover {
-	width: 90px;
+	width:90px;
 	padding-left: 20px;
 }
 
@@ -1573,11 +1627,6 @@ h1.entry-title {
 /*
  * post styles
  */
-
-a.post-thumbnail:hover img {
-	opacity: 0.85;
-}
-
 .full-size-link:before,
 .parent-post-link:before,
 .site-content span + .byline:before,
@@ -1742,6 +1791,10 @@ a.post-thumbnail:hover img {
 	top: 8px;
 	left: -2px;
 	width: 4px;
+}
+
+.entry-meta a:hover {
+	opacity: 0.8;
 }
 
 blockquote {
@@ -2298,6 +2351,16 @@ div.wpcf7-validation-errors {
 	color: #8c6617;
 }
 
+.yarpp-related {
+	background-color: #fff;
+	padding: 10px 20px;
+}
+
+.yarpp-thumbnail .yarpp-thumbnail-title {
+	color: #555;
+	font-size: 0.8em !important;
+}
+
 /* 12. Hacks & IE
   ========================================================================== */
 
@@ -2586,6 +2649,54 @@ div.wpcf7-validation-errors {
 .flexslider:hover .flex-next { opacity: 1; right: 0px; }
 .flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
 .flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?26060425#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-spin6:before { content: '\e803'; } /* '' */
+.icon-pinterest-circled:before { content: '\e804'; } /* '' */
+.icon-twitter-circled:before { content: '\e800'; } /* '' */
+.icon-facebook-circled:before { content: '\e801'; } /* '' */
+.icon-gplus-circled:before { content: '\e802'; } /* '' */
 
 /* 16. Print Style
  ========================================================================== */

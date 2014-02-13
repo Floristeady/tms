@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-			<div id="the-tag">Blog »</div>
+			<div id="the-tag"><a href="<?php echo get_permalink( get_page_by_path( 'blog' ) ) ?>"><?php _e('Blog »', 'themamastore') ?></a></div>
 			<div id="home-top">
 			<?php $args = array(
 					'post_type'	=> 'post',
@@ -211,7 +211,7 @@ get_header(); ?>
 		
 		<div id="shop">
 		
-		<div style="display:none;"id="the-tag">Tienda »</div>
+		<div style="display:none;" id="the-tag"><a href="#"><?php _e('Tienda »', 'themamastore') ?></a></div>
 		
 			<div id="collections">
 				<?php  $rows = get_field('coleccion');  ?>

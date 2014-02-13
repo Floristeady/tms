@@ -10,6 +10,7 @@
 			<span class="current"><?php the_title(); ?></span>
 		
 		<?php } elseif (is_category() || is_single()) { ?>
+			<a href="<?php echo get_permalink( get_page_by_path( 'blog' ) ) ?>"> <?php _e('Blog', 'themamastore') ?></a><span class="separator"> > </span>
 			<?php  echo '<span class="cat">';
 			the_category('</span><span class="separator"> > </span><span class="current">');
             if (is_single()) {

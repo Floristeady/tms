@@ -631,4 +631,20 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 	return $existing_mimes;
 }
 
+/*
+* Change rel to class en Menu
+*/
+
+function add_menuclass($ulclass) {
+	return preg_replace('/<a rel="icon-facebook-circled"/', '<a rel="icon-facebook-circled" class="icon-facebook-circled"', $ulclass, 1);
+}
+
+add_filter('wp_nav_menu','add_menuclass');
+
+function add_menuclass2($ulclass) {
+	return preg_replace('/<a rel="icon-twitter-circled"/', '<a rel="icon-twitter-circled" class="icon-twitter-circled"', $ulclass, 2);
+}
+
+add_filter('wp_nav_menu','add_menuclass2');
+
 ?>

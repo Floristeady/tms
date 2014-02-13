@@ -20,6 +20,7 @@
 			
 	    <meta name="description" content="<?php echo '' . get_bloginfo ( 'description' );  ?>">
 	    <meta name="robots" content="index,follow">
+	    <meta name="twitter:widgets:csp" content="on">
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
