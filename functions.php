@@ -636,15 +636,22 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 */
 
 function add_menuclass($ulclass) {
-	return preg_replace('/<a rel="icon-facebook-circled"/', '<a rel="icon-facebook-circled" class="icon-facebook-circled"', $ulclass, 1);
+	return preg_replace('/<a rel="icon-facebook"/', '<a rel="icon-facebook" target="_blank" class="icon-facebook"', $ulclass, 1);
 }
 
 add_filter('wp_nav_menu','add_menuclass');
 
 function add_menuclass2($ulclass) {
-	return preg_replace('/<a rel="icon-twitter-circled"/', '<a rel="icon-twitter-circled" class="icon-twitter-circled"', $ulclass, 2);
+	return preg_replace('/<a rel="icon-twitter"/', '<a rel="icon-twitter" target="_blank" class="icon-twitter"', $ulclass, 2);
 }
 
 add_filter('wp_nav_menu','add_menuclass2');
+
+function add_menuclass3($ulclass) {
+	return preg_replace('/<a rel="icon-pinterest"/', '<a rel="icon-pinterest" target="_blank" class="icon-pinterest"', $ulclass, 3);
+}
+
+add_filter('wp_nav_menu','add_menuclass3');
+
 
 ?>

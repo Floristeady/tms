@@ -69,13 +69,12 @@
 			) );
 		else : 
 			if (has_excerpt()) : 
-				$excerpt = $post->post_excerpt;
-				$excerpt = substr($excerpt, 0, 200); ?>
-				<?php echo $excerpt; ?>...
+				$excerpt = $post->post_excerpt; ?>
+				<p><?php echo wp_trim_words( $excerpt, 20 ); ?></p>
 			<?php else : 		    
-				$content = $post->post_content;
-				$content = substr($content, 0, 200); ?>
-				<?php echo $content; ?>...
+				$content = $post->post_content; ?>
+				<p><?php echo wp_trim_words( $content, 20 ); ?></p> 
+
 
 		<?php endif; //has excerpt
 		

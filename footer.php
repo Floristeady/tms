@@ -22,6 +22,15 @@
 		</div>
 	</footer><!-- footer -->
 	
+	</div>
+	
 	<?php wp_footer(); ?>
+	<script data-no-instant>
+		InstantClick.on('change', function() {
+			//ga('send', 'pageview', location.pathname + location.search);
+		});
+
+		InstantClick.init(50, true);
+	</script>
 	</body>
 </html>

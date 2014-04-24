@@ -3,13 +3,19 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+Tu cargo dentro del proyecto: Florencia Rosenfeld - Directora de diseño
+                            
+Site: http://www.corpspin.com - http://www.floristeady.com 
+                            
+Twitter: #floristeady
+                            
+Location: Santiago. Chile.
 
 # THANKS
 
-    <name>
+    Name: Maria Paz García - http://www.corpspin.com
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
+    HTML5, CSS3, Wordpress, Blog,
     jQuery, Modernizr

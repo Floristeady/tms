@@ -275,19 +275,18 @@
 			$options = get_option('plugin_options');
 			$account = $options['google_verification_account'];
 			echo '<meta name="google-site-verification" content="'.$account.'">'.PHP_EOL;
-			echo '<script type="text/javascript">
-					var _gaq = _gaq || [];
-				  _gaq.push(["_setAccount", "'.$account.'"]);
-				  _gaq.push(["_trackPageview"]);
+
+			echo '<script>
+				  (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+				  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				  })(window,document,"script","//www.google-analytics.com/analytics.js","ga");
 				
-				  (function() {
-				    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
-				    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-				    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
-				  })();
-				  </script>'.PHP_EOL;
-		}
-	endif; // add_google_verification
+				  ga("create", "'.$account.'", "themamastore.cl");
+				  ga("require", "displayfeatures");
+				  ga("send", "pageview");</script>'.PHP_EOL;
+  
+		} endif; // add_google_verification
 
 	//	$options['viewport']
 	if ( ! function_exists( 'add_viewport' ) ):
@@ -358,7 +357,7 @@
 	if ( ! function_exists( 'add_site_script' ) ):
 		function add_site_script() {
 			$cache = cache_buster();
-			echo '<script src="' .BP_THEME_URL. '/js/script-starter.js'.$cache.'"></script>'.PHP_EOL;
+			echo '<script src="' .BP_THEME_URL. '/js/script-starter.js'.$cache.'" data-instant></script>'.PHP_EOL;
 		}
 	endif; // add_site_script
 
