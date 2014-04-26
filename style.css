@@ -983,8 +983,7 @@ nav#nav-2 .no-text a {
  */
  
 #breadcrumbs {
-	background-color: #e5e1df;
-	border-bottom: 1px solid #d8d4d1;
+	background-color: #ece7e5;
 	margin-top: 0px;
 	position: relative;
 	z-index: 0;
@@ -1012,6 +1011,7 @@ nav#nav-2 .no-text a {
 #breadcrumbs .current {
 	font-size: 1.4em;
 	font-weight: 600;
+	color: #aaaaaa;
 }
 
 #breadcrumbs .cat {
