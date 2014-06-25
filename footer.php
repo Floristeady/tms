@@ -20,17 +20,15 @@
 		<?php get_sidebar( 'footer' ); ?>
 		
 		</div>
+		<a style="margin-top:24px; float:left;" href="#" onclick="window.open('https://www.sitelock.com/verify.php?site=themamastore.cl','SiteLock','width=600,height=600,left=160,top=170');" ><img alt="website security" title="SiteLock" src="//shield.sitelock.com/shield/themamastore.cl"/></a>
 	</footer><!-- footer -->
 	
 	</div>
 	
 	<?php wp_footer(); ?>
-	<script data-no-instant>
-		InstantClick.on('change', function() {
-			//ga('send', 'pageview', location.pathname + location.search);
-		});
+	
+			
 
-		InstantClick.init(50, true);
-	</script>
+	<script src="https://du8eo9nh88b2j.cloudfront.net/libs/0.0.2/search_widget.min.js" type="text/javascript"></script>
 	</body>
 </html>

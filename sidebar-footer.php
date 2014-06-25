@@ -24,27 +24,27 @@
 ?>
 
 <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-					<ul class="widget-footer">
+					<div class="widget-footer">
 						<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-					</ul>
+					</div>
 <?php endif; ?>
 
 <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?>
-					<ul class="widget-footer">
+					<div class="widget-footer">
 						<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
-					</ul>
+					</div>
 <?php endif; ?>
 
 <?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
-					<ul class="widget-footer">
+					<div class="widget-footer">
 						<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
-					</ul>
+					</div>
 <?php endif; ?>
 
 <?php if ( is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
-					<ul class=" widget-footer">
+					<div class=" widget-footer">
 						<?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>
-					</ul>
+					</div>
 <?php endif; ?>
 
 

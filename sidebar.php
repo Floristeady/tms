@@ -16,10 +16,12 @@
 	 * then the sidebar simply doesn't exist, so we'll hard-code in
 	 * some default sidebar stuff just in case.
 	 */
-	if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
+	if ( is_active_sidebar( 'primary-widget-area' ) && is_active_sidebar( 'optional-widget-area' ) ) : ?>
 
 	<ul class="widget-list">
 		<?php dynamic_sidebar( 'primary-widget-area' ); ?>
+		<?php include('inc/sidebar-products.php'); ?>	
+		<?php dynamic_sidebar( 'optional-widget-area' ); ?>
 	</ul>
 	<?php endif; ?>
 

@@ -54,7 +54,7 @@ get_header(); ?>
 								the_title( '<h1 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 							endif;
 						?>
-					</header><!-- .entry-header -->	
+					</header>
 					
 					<div class="entry-content <?php if ( !is_single() ) { echo 'list-content'; } ?>">
 			
@@ -92,9 +92,9 @@ get_header(); ?>
 								endif;
 					
 								if ( is_single() ) :
-									the_title( '<h1 class="entry-title">', '</h1>' );
+									the_title( '<h2 class="entry-title">', '</h2>' );
 								else :
-									the_title( '<h1 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+									the_title( '<h2 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 								endif;
 							?>
 						</header>
@@ -110,7 +110,7 @@ get_header(); ?>
 					
 							<?php
 								endif;
-									the_title( '<h1 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>	<a class="btn" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __('Leer más +', 'themamastore').'</a></h1>' );
+									the_title( '<h2 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>	<a class="btn" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . __('Leer más +', 'themamastore').'</a></h2>' );
 							?>
 						</header>
 								
@@ -136,9 +136,9 @@ get_header(); ?>
 							endif;
 				
 							if ( is_single() ) :
-								the_title( '<h1 class="entry-title">', '</h1>' );
+								the_title( '<h2 class="entry-title">', '</h2>' );
 							else :
-								the_title( '<h1 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+								the_title( '<h2 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 							endif;
 						?>
 					</header><!-- .entry-header -->	
@@ -161,9 +161,9 @@ get_header(); ?>
 								endif;
 					
 								if ( is_single() ) :
-									the_title( '<h1 class="entry-title">', '</h1>' );
+									the_title( '<h2 class="entry-title">', '</h2>' );
 								else :
-									the_title( '<h1 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+									the_title( '<h2 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 								endif;
 							?>
 						</header>
@@ -197,22 +197,27 @@ get_header(); ?>
 			</div><!--top-## -->
 
 			
-				<?php if( get_field('imagen_aviso_central') && get_field('link_aviso_central')) : ?>
-				<div id="center">
+			<?php if( get_field('imagen_aviso_central') && get_field('link_aviso_central')) : ?>
+			<div id="center" class="clearfix">
+				<div class="ad">
 					<a href="<?php the_field('link_aviso_central'); ?>" title="<?php the_field('texto_opcional_central'); ?>">
 						<img src="<?php the_field('imagen_aviso_central'); ?>" alt="<?php the_field('texto_opcional_central'); ?>" />
 					</a>
-				<?php elseif( get_field('imagen_aviso_central')) : ?>
-					<img src="<?php the_field('imagen_aviso_central'); ?>" alt="<?php the_field('texto_opcional_central'); ?>" />
-				
+				</div>
 			</div>
-				<?php endif; //aviso central?>	
+		  <?php elseif( get_field('imagen_aviso_central')) : ?>
+		  <div id="center" class="clearfix">
+					<div class="ad">
+					<img src="<?php the_field('imagen_aviso_central'); ?>" alt="<?php the_field('texto_opcional_central'); ?>" />
+					</div>
+			</div>
+			<?php endif; //aviso central?>	
 		
 			</div><!-- #home-top-## -->
 		
-			<div id="shop">
+			<div id="shop" style="display:none;">
 		
-				<div style="display:none;" class="the-tag"><a href="#"><?php _e('Tienda »', 'themamastore') ?></a></div>
+				<div class="the-tag tag-shop"><a href="#"><?php _e('Tienda »', 'themamastore') ?></a></div>
 			
 				<div id="home-bottom">
 					<?php  $rows = get_field('coleccion');  ?>
@@ -232,7 +237,7 @@ get_header(); ?>
 			
 					 		<li>
 					 			<a href="<?php echo $row['link_coleccion'] ?>" class="fancybox"> 
-					 				<img src="<?php bloginfo('template_url') ?>/timthumb.php?src=<?php echo $row['imagen_coleccion'] ?>&w=242&h=188"/>
+					 				<img src="<?php bloginfo('template_url') ?>/timthumb.php?src=<?php echo $row['imagen_coleccion'] ?>&w=245&h=188"/>
 					 				<h2><?php echo $row['agregar_titulo_coleccion'] ?></h2>
 					 			</a> 
 					 		</li>
@@ -243,8 +248,11 @@ get_header(); ?>
 							
 					</div>	
 					<?php } ?>
-				</div>	
 				
+				</div>
+				
+				<?php include('inc/featured-products.php'); ?>	
+								
 			</div><!-- #shop -->	
 
 		</div><!-- #content -->

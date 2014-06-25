@@ -231,8 +231,19 @@ function themamastore_widgets_init() {
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
-
+	
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Main Optional Sidebar', 'themamastore' ),
+		'id' => 'optional-widget-area',
+		'description' => __( 'Optional Sidebar Widget', 'themamastore' ),
+		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+
+	// Area 3, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Secondary Sidebar', 'themamastore' ),
 		'id' => 'secondary-widget-area',
@@ -306,18 +317,12 @@ function themamastore_font_url() {
 	 */
 	if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'themamastore' ) ) {
 		//$font_url = add_query_arg( 'family', urlencode( 'Roboto:400,700,300' ), "//fonts.googleapis.com/css" );
-		$font_url = add_query_arg( 'family','Roboto:400,700,300' , "//fonts.googleapis.com/css" );
+		$font_url = add_query_arg( 'family','Roboto:400,700,300|Roboto+Slab:400,700' , "//fonts.googleapis.com/css" );
 	}
 
 	return $font_url;
 }
-function themamastore_font_url_two() {
-	$font_url = '';
-	if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'themamastore' ) ) {
-		$font_url = add_query_arg( 'family', 'Roboto+Slab:400,700' , "//fonts.googleapis.com/css" );
-	}
-	return $font_url;
-}
+
 
 /**
  * Enqueue scripts and styles for the front end.
@@ -330,9 +335,6 @@ function themamastore_scripts() {
 	// Add Roboto font, used in the main stylesheet.
 	wp_enqueue_style( 'themamastore-roboto', themamastore_font_url(), array(), null );
 	
-	// Add Roboto Slab font, used in the main stylesheet.
-	wp_enqueue_style( 'themamastore-roboto-slab', themamastore_font_url_two(), array(), null );
-
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons.css', array(), '3.0.2' );
 

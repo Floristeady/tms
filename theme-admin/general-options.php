@@ -357,7 +357,7 @@
 	if ( ! function_exists( 'add_site_script' ) ):
 		function add_site_script() {
 			$cache = cache_buster();
-			echo '<script src="' .BP_THEME_URL. '/js/script-starter.js'.$cache.'" data-instant></script>'.PHP_EOL;
+			echo '<script src="' .BP_THEME_URL. '/js/script-starter.js'.$cache.'"></script>'.PHP_EOL;
 		}
 	endif; // add_site_script
 

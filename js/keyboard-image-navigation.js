@@ -1,5 +1,5 @@
 /**
- * Twenty Fourteen keyboard support for image navigation.
+ * The mama store keyboard support for image navigation.
  */
 ( function( $ ) {
 	$( document ).on( 'keydown.twentyfourteen', function( e ) {

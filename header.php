@@ -23,11 +23,11 @@
 	    <meta name="twitter:widgets:csp" content="on">
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.css" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		<!--<link rel="shortcut icon" type="image/png" href="<?php bloginfo('wpurl'); ?>/favicon.png" />-->
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" /> 
 		<!--[if lt IE 9]>
 			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 		<![endif]-->
+		<?php include('inc/facebook-opengraph.php');?>
 <?php
 		/* We add some JavaScript to pages with the comment form
 		 * to support sites with threaded comments (when in use).
@@ -42,18 +42,13 @@
 		 */
 		wp_head();
 ?>
+		
 	</head>
 	<body <?php body_class(); ?>>
+		
+		<?php include('inc/facebook-code.php');?>  
 	
 		<div class="clearfix" id="page">
-		
-		    <?php if ( get_header_image() ) : ?>
-			<div id="site-header">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-				</a>
-			</div>
-			<?php endif; ?>
 				
 			<header id="masthead" role="banner">
 			
@@ -98,6 +93,7 @@
 			<?php if(! is_front_page() ) {
 				include('inc/breadcrumbs.php'); 
 			} ?>
+
 
 			<div id="main" role="main" class="content-center">
 			

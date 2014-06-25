@@ -86,8 +86,9 @@ $(function() {
 	
 	if ( $('#sidebar .newsletter').length) {
 		$('#sidebar .newsletter').parents('aside').css('padding','0');
+		$('#sidebar .newsletter').parents('aside').css('width','100%');
 	}
-	
+
 });
 
 $(document).ready(function(){ 
