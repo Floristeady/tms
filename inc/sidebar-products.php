@@ -1,5 +1,5 @@
 <?php if(is_single()) { ?>
-	<aside id="sidebar-products" style="display:none;">
+	<aside id="sidebar-products">
 			<h1 class="title">En la Tienda</h1>
 			<!-- Product results template -->
 			<script type="text/html" data-template="sidebar_products_single">
@@ -42,7 +42,7 @@
 </aside>	
 <?php } else { ?>	
 
-	<aside id="sidebar-products" style="display:none;">
+	<aside id="sidebar-products">
 			<h1 class="title">En la Tienda</h1>
 			<!-- Product results template -->
 			<script type="text/html" data-template="sidebar_products_blog">

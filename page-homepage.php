@@ -189,10 +189,11 @@ get_header(); ?>
 				</div>
 				
 				<div class="one-third">
-				<?php include('inc/newsletter.php'); ?>	
-				</div>
-				<div class="one-third">
 				<?php include('inc/twitter.php'); ?>
+				</div>
+				
+				<div class="one-third">
+				<?php include('inc/newsletter.php'); ?>	
 				</div>
 			</div><!--top-## -->
 
@@ -215,9 +216,9 @@ get_header(); ?>
 		
 			</div><!-- #home-top-## -->
 		
-			<div id="shop" style="display:none;">
+			<div id="shop">
 		
-				<div class="the-tag tag-shop"><a href="#"><?php _e('Tienda »', 'themamastore') ?></a></div>
+				<div class="the-tag tag-shop"><a href="http://tienda.themamastore.cl/"><?php _e('Tienda »', 'themamastore') ?></a></div>
 			
 				<div id="home-bottom">
 					<?php  $rows = get_field('coleccion');  ?>
