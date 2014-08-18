@@ -308,6 +308,15 @@ input#searchsubmit:-ms-input-placeholder {
 	max-width: 100%;
 }
 
+.comment-content p {
+	font-size: 1em;
+	margin: .3em 0 0;
+}
+
+.children .comment-content p {
+	font-size: 1.2em;
+}
+
 /**
  * Make sure images with WordPress-added height and width attributes are
  * scaled correctly.
@@ -1479,6 +1488,25 @@ h1.entry-title {
 	float: left;
 }
 
+#home-posts .newsletter {
+	margin: .2em 0 0;
+	float: left;
+	width: 91%;
+	padding: 0.8em 4%;
+}
+
+#home-posts .newsletter p.text {
+	display: none;
+}
+
+#home-posts .newsletter input[type='email'] {
+	width: 90%;
+}
+
+#home-posts .newsletter button {
+	margin: 10px 0 0;
+}
+
 /*
 *index content
 */
@@ -2521,7 +2549,7 @@ blockquote {
 }
 
 .comment-list .reply {
-	margin-top: 24px;
+	margin-top: 14px;
 }
 
 .comment-author .fn {
@@ -2550,7 +2578,7 @@ blockquote {
 .comment-list .trackback {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 	margin-bottom: 24px;
-	padding-top: 24px;
+	padding-top: 18px;
 }
 
 .comment-list > li:first-child > article,
@@ -3243,6 +3271,49 @@ body*.safarihack {background-color: #f9f7ef !important; }
 
 .print:hover {
 	background-color: #ccc; border: 1px solid #b0b0b0; box-shadow: inset 1px 1px 1px #e5e5e5;
+}
+
+#box-subscribe {
+    display: none;
+    background: #fff url(images/elements/babyback.jpg) no-repeat right center;
+    position: relative;
+    width: 50%;
+    padding: 2% 3%;
+    border: 4px solid #bd2d46;
+}
+
+#box-subscribe form button {
+	margin: 15px 0 0;
+}
+
+#box-subscribe p {
+	width: 60%;
+}
+
+.modal_close {
+	font-size: 2.5rem;
+	line-height: 1;
+	position: absolute;
+	top: 0.5rem;
+	right: 0.6875rem;
+	color: #aaa;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+a.modal {
+	display: none;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
 }
 
 /* 16. Print Style

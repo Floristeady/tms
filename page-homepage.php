@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+<?php include('inc/modal.php'); ?> 
+
 <div id="main-content" class="main-content home-content">
 
 <div id="primary" class="content-area">
@@ -144,30 +146,9 @@ get_header(); ?>
 					</header><!-- .entry-header -->	
 					
 					</article><!-- #post-## -->
-						
-						<?php elseif ($i == 5) :?>
-		
-						<article  id="post-fifth" <?php post_class(); ?>>
-		
-						<a class="post-thumbnail" href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('themamastore-third-width'); ?>
-						</a>
-							
-						<header class="entry-header">
-							
-							<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && themamastore_categorized_blog() ) : ?>
-					
-							<?php
-								endif;
-					
-								if ( is_single() ) :
-									the_title( '<h2 class="entry-title">', '</h2>' );
-								else :
-									the_title( '<h2 class="entry-title list-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-								endif;
-							?>
-						</header>
-					</article><!-- #post-## -->
+					<?php include('inc/newsletter.php'); ?>	
+					<?php //elseif ($i == 5) :?>
+					<?php //include('inc/post-fifth.php'); ?>
 						
 					</div><!-- col-->	
 					<?php endif; ?>
@@ -176,28 +157,7 @@ get_header(); ?>
 				<?php  $i++; endwhile; wp_reset_postdata(); ?>
 				</div><!--home-post-## -->
 		
-				<div id="top">
-				<div class="one-third">
-				<?php if( get_field('imagen_aviso_lateral') && get_field('link_aviso_lateral')) : ?>
-				
-					<a href="<?php the_field('link_aviso_lateral'); ?>" title="<?php the_field('texto_opcional_seo'); ?>">
-						<img src="<?php the_field('imagen_aviso_lateral'); ?>" alt="<?php the_field('texto_opcional_seo'); ?>" />
-					</a>
-				<?php elseif( get_field('imagen_aviso_lateral')) : ?>
-					<img src="<?php the_field('imagen_aviso_lateral'); ?>" alt="<?php the_field('texto_opcional_seo'); ?>" />
-				<?php endif; //aviso lateral?>	
-				</div>
-				
-				<div class="one-third">
-				<?php include('inc/twitter.php'); ?>
-				</div>
-				
-				<div class="one-third">
-				<?php include('inc/newsletter.php'); ?>	
-				</div>
-			</div><!--top-## -->
-
-			
+							
 			<?php if( get_field('imagen_aviso_central') && get_field('link_aviso_central')) : ?>
 			<div id="center" class="clearfix">
 				<div class="ad">
@@ -253,7 +213,41 @@ get_header(); ?>
 				</div>
 				
 				<?php include('inc/featured-products.php'); ?>	
-								
+				
+				<div class="content-center">
+					<div id="top" >
+						<div class="one-third">
+							<?php if( get_field('imagen_aviso_lateral') && get_field('link_aviso_lateral')) : ?>
+					
+						<a href="<?php the_field('link_aviso_lateral'); ?>" title="<?php the_field('texto_opcional_seo'); ?>">
+							<img src="<?php the_field('imagen_aviso_lateral'); ?>" alt="<?php the_field('texto_opcional_seo'); ?>" />
+						</a>
+						<?php elseif( get_field('imagen_aviso_lateral')) : ?>
+							<img src="<?php the_field('imagen_aviso_lateral'); ?>" alt="<?php the_field('texto_opcional_seo'); ?>" />
+						<?php endif; //aviso lateral?>	
+						</div>
+						
+						<div class="one-third">
+							<?php if( get_field('imagen_central_chico') && get_field('textoseo_central_chico')) : ?>
+					
+						<a href="<?php the_field('link_aviso_central_chico'); ?>" title="<?php the_field('textoseo_central_chico'); ?>">
+							<img src="<?php the_field('imagen_central_chico'); ?>" alt="<?php the_field('textoseo_central_chico'); ?>" />
+						</a>
+						<?php elseif( get_field('imagen_central_chico')) : ?>
+							<img src="<?php the_field('imagen_central_chico'); ?>" alt="<?php the_field('textoseo_central_chico'); ?>" />
+						<?php endif; //aviso lateral?>	
+						</div>
+					
+						<div class="one-third">
+						<?php include('inc/twitter.php'); ?>
+						</div>
+					
+						<!--!<div class="one-third">-->
+						<?php //include('inc/newsletter.php'); ?>	
+						<!--!</div>-->
+					</div><!--top-## -->
+			   </div>
+				
 			</div><!-- #shop -->	
 
 		</div><!-- #content -->
