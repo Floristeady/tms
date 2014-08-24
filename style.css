@@ -2909,6 +2909,14 @@ div.wpcf7-validation-errors {
 /* 12. Hacks & IE
   ========================================================================== */
 
+.ie nav#access ul.sub-menu {
+	opacity: 1;
+}
+
+.ie input[type="search"] {
+	background: #bd2d46;
+}
+
 /* =Hack webkit */
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -2924,12 +2932,6 @@ body*.safarihack {background-color: #f9f7ef !important; }
 @-moz-document url-prefix() {
 
 }
-
-/* =Hack explorer 7 y 8 */
-
-.lte8 {}
-
-.ie7 {}
 
 
 /* 13. Page Styles for MediaQueries
@@ -3084,6 +3086,20 @@ body*.safarihack {background-color: #f9f7ef !important; }
 
 /* 15. Helpers
 ========================================================================== */
+
+
+body .buorg {
+    border-bottom:none;
+    background:#f6a02f;
+    background-repeat: no-repeat;
+    background-image: none;
+    text-align:left;
+    cursor:pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8em;
+    text-align: center;
+    color: #ffffff;
+}
 
 /*
  * Image replacement

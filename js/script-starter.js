@@ -2,6 +2,10 @@
 Any site-specific scripts you might have.
 */
 
+/************************* 
+	Ejecución
+**************************/
+	
 $(window).load(function() {
   if ( $('.carousel-collections').length) {
 	  $('.carousel-collections').flexslider({
@@ -19,7 +23,16 @@ $(window).load(function() {
 	  });
   }
 });
-  
+
+//Si no soporta archivos en formato SVG
+if (!Modernizr.svg) {
+  $("a.logo img").attr("src", "wp-content/themes/themamastore/images/elements/logotms.png");
+  $('img[src$=".svg"]').hide();
+}
+	
+/************************* 
+	Functiones
+**************************/
 $(function() {  
 	//isotope para blog
 	if( $('.blog-content').length) {
@@ -101,22 +114,30 @@ $(function() {
 	    if ($(this).text() == '-')
 	        $(this).text('');
      });
-});  
 
-
-$(function() { 
-
+	 $(".home a.modal").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
 	
-  $(".home a.modal").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
-
-  // if the cookie doesn't exist create it and show the modal  -- suscribe
-  if (!$.cookie('suscribe') ) {
-	// create the cookie. Set it to expire in 1 day
-	$.cookie('suscribe', true, { expires: 5 });
-    //call the reveal modal
-    var delay=1000; 
-    setTimeout(function(){
-         $(".modal").click();
-		 },delay);
-   }
+	 // if the cookie doesn't exist create it and show the modal  -- suscribe
+	 if (!$.cookie('suscribe') ) {
+		// create the cookie. Set it to expire in 1 day
+		$.cookie('suscribe', true, { expires: 5 });
+	    //call the reveal modal
+	    var delay=1000; 
+	    setTimeout(function(){
+	         $(".modal").click();
+			 },delay);
+	  }
 });
+
+
+var $buoop = {
+	vs:{i:8,f:15,o:12.1,s:5.1}}; 
+$buoop.ol = window.onload; 
+window.onload=function(){ 
+ try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+ var e = document.createElement("script"); 
+ e.setAttribute("type", "text/javascript"); 
+ e.setAttribute("src", "//browser-update.org/update.js"); 
+ document.body.appendChild(e); 
+} 
+	
