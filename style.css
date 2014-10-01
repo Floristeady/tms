@@ -1231,11 +1231,20 @@ nav#nav-2 .no-text a {
 }
 
 #home-posts {
-	margin-bottom: 1em;
 	float: left;
 	width: 100%;
 	position: relative;
 	z-index: 1;
+	border-bottom: 1px dotted #b6a7a0;
+	padding-bottom: 1.4em;
+}
+
+#featured-posts {
+	border-bottom: 1px dotted #b6a7a0;
+	float: left;
+	width: 100%;
+	padding-bottom: .4em;
+	margin: 0 0 2.5em;
 }
 
 .col {
@@ -1245,7 +1254,7 @@ nav#nav-2 .no-text a {
 }
 
 article#post-first {
-	width: 497px;
+	width: 47%;
 	min-height: 445px;
 }
 
@@ -1254,13 +1263,17 @@ article#post-first {
 	font-family: 'Roboto Slab', serif;
 }
 
+article#post-first {
+	border: none;
+}
+
 article#post-first .entry-header {
 	width: 85%;
+	margin-top:-30px;
 }
 
 article#post-first .post-thumbnail {
-	width: 466px;
-	margin-left: 25px;
+	width: 490px;
 }
 
 article#post-first .list-title {
@@ -1289,7 +1302,7 @@ article#post-fifth:hover .list-title{
 }
 
 article#post-first  .entry-content p {
-	margin-top: 0px;
+	margin-top: 10px;
 	margin-left: 25px;
 	color: #535353;
 }
@@ -1356,20 +1369,21 @@ article#post-fourth .entry-header, article#post-fifth .entry-header{
 	height: 95px;
 }
 
-.home article .entry-header {
+#home-posts article .entry-header, 
+#home-posts .blog article .entry-header {
 	display: table;
 }
 
-.home article .list-title {
+#home-posts article .list-title {
 	vertical-align: middle;
 	display: table-cell;
 }
 
-.home article .list-title a {
+#home-posts article .list-title a {
 	font-weight: 200;
 }
 
-.home article .list-content blockquote {
+#home-posts article .list-content blockquote {
 	display: none;
 }
 

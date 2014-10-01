@@ -46,7 +46,7 @@ function themamastore_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 378, 999, false);
 	add_image_size( 'themamastore-single-width', 766, 530, false );
-	add_image_size( 'themamastore-home-width', 466, 352, true );
+	add_image_size( 'themamastore-home-width', 490, 352, true );
 	add_image_size( 'themamastore-second-width', 250, 212, true );
 	add_image_size( 'themamastore-third-width', 250, 130, true );
 

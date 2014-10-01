@@ -9,7 +9,11 @@
 
 get_header(); ?>
 
+	<?php include('inc/posts-top.php'); ?>
+
 	<div id="primary" class="content-area">
+		
+		
 		<div id="content" class="site-content" role="main">
 
 		<?php
@@ -17,6 +21,9 @@ get_header(); ?>
 				// Start the Loop.
 				
 				echo '<div class="blog-content">';
+
+				$args =array('orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true);
+				query_posts($args);
 				while ( have_posts() ) : the_post();
 
 					/*
@@ -36,6 +43,8 @@ get_header(); ?>
 				get_template_part( 'content', 'none' );
 
 			endif;
+			// Reset Post Data
+			wp_reset_postdata();
 		?>
 
 		</div><!-- #content -->
