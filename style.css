@@ -804,7 +804,7 @@ nav#access ul.menu > li > a {
 	float: left;
 	font-family: 'Roboto Slab', serif;
 	text-transform: uppercase;
-	border-right: 1px solid #d3d3d3;
+	/*border-right: 1px solid #d3d3d3;*/
 } 
 
 nav#access ul.menu > li:last-child {
@@ -824,8 +824,9 @@ nav#access li.current-page-ancestor > a {
 
 nav#access li.current-menu-item, 
 nav#access li.current_page_item, 
-nav#access li.current-page-ancestor{
-	background-color: #faf9f6;
+nav#access li.current-page-ancestor,
+nav#access li.current-menu-ancestor{
+	background-color: #faf9f6 !important;
 }
 
 .home nav#access li.current-menu-item, 
@@ -857,7 +858,8 @@ nav#access ul.sub-menu {
 	display: block;
 	background-color: #faf9f6;
 	position: absolute;
-	left: -20em; 
+	left: -37.1em;
+	/*left: -20em;* cambiar al agregar dos items más al menú/ 
 	/*left: -28em; cambiar al quitar "Tienda"*/
 	top: 3em;
 	padding: 1em 0.8em 1em;

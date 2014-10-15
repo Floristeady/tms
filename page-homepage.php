@@ -8,8 +8,6 @@
 
 get_header(); ?>
 
-<?php include('inc/modal.php'); ?> 
-
 <div id="main-content" class="main-content home-content">
 
 <div id="primary" class="content-area">

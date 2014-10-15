@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+<?php //include('inc/modal.php'); ?> 
+
 	<?php include('inc/posts-top.php'); ?>
 
 	<div id="primary" class="content-area">
@@ -17,13 +19,18 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 		<?php
+			$args =array(
+				'ignore_sticky_posts' => true,
+				//'posts_per_page' => 10,
+				'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ),
+				'post__not_in' => get_option("sticky_posts")
+				 );
+			query_posts($args);	
 			if ( have_posts() ) :
 				// Start the Loop.
 				
 				echo '<div class="blog-content">';
-
-				$args =array('orderby' => 'date', 'order' => 'DESC', 'ignore_sticky_posts' => true);
-				query_posts($args);
+				
 				while ( have_posts() ) : the_post();
 
 					/*
@@ -45,6 +52,7 @@ get_header(); ?>
 			endif;
 			// Reset Post Data
 			wp_reset_postdata();
+			
 		?>
 
 		</div><!-- #content -->

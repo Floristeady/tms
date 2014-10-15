@@ -115,12 +115,12 @@ $(function() {
 	        $(this).text('');
      });
 
-	 $(".home a.modal").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
+	 $(".blog a.modal").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
 	
 	 // if the cookie doesn't exist create it and show the modal  -- suscribe
-	 if (!$.cookie('suscribe') ) {
+	 if (!$.cookie('suscribe3') ) {
 		// create the cookie. Set it to expire in 1 day
-		$.cookie('suscribe', true, { expires: 5 });
+		$.cookie('suscribe3', true, { expires: 5 });
 	    //call the reveal modal
 	    var delay=1000; 
 	    setTimeout(function(){

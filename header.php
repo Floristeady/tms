@@ -24,6 +24,7 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.css" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" /> 
+		
 		<!--[if lt IE 9]>
 			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 		<![endif]-->
@@ -74,7 +75,7 @@
 					<div id="site-title">
 					
 					<?php if( $themamastore_settings['custom_logo'] ) : ?>
-						<h1><a href="<?php echo bloginfo('url'); ?>" class="logo"><img src="<?php echo $themamastore_settings['custom_logo']; ?>" alt="<?php bloginfo('name'); ?>" /> </a></h1>
+						<h1><a href="http://www.themamastore.cl" class="logo"><img src="<?php echo $themamastore_settings['custom_logo']; ?>" alt="<?php bloginfo('name'); ?>" /> </a></h1>
 					<?php  else : ?>
 						<h1><a href="<?php echo bloginfo('url'); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php endif; ?>

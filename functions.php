@@ -655,5 +655,7 @@ function add_menuclass3($ulclass) {
 
 add_filter('wp_nav_menu','add_menuclass3');
 
-
+/*
+* end
+*/
 ?>
