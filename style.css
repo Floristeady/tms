@@ -1179,7 +1179,7 @@ nav#nav-2 .no-text a {
 /* Paging Navigation */
 
 .paging-navigation {
-	margin: 0px 0 2em;
+	margin: -2em 0 2em;
 	position: relative;
 	z-index: 1;
 	float: left;
@@ -1499,7 +1499,7 @@ h1.entry-title {
 }
 
 .blog-content {
-	padding-bottom: 40px;
+	padding-bottom: 3em;
 	width: 100%;
 	float: left;
 }
