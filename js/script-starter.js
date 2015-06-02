@@ -111,8 +111,9 @@ $(function() {
   
     //eliminar línea menu
     $('li.no-text a').each(function() {
-	    if ($(this).text() == '-')
+	    //if ($(this).text() == '-') {
 	        $(this).text('');
+	   // }
      });
 
 	 $(".blog a.modal").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" });
