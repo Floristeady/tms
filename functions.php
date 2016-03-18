@@ -655,6 +655,12 @@ function add_menuclass3($ulclass) {
 
 add_filter('wp_nav_menu','add_menuclass3');
 
+function add_menuclass4($ulclass) {
+	return preg_replace('/<a rel="icon-instagram"/', '<a rel="icon-instagram" target="_blank" class="icon-instagram"', $ulclass, 4);
+}
+
+add_filter('wp_nav_menu','add_menuclass4');
+
 /*
 * end
 */
