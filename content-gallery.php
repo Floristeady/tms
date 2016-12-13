@@ -14,6 +14,10 @@
 	endif; ?>
 
 	<header class="entry-header">
+		<?php  if ( !is_category() && !is_single() ) :  
+		 	 the_category(); 
+		 endif; ?>
+		
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && themamastore_categorized_blog() ) : ?>
 		<div class="entry-meta  <?php if ( !is_single() ) { echo 'list-meta'; } ?>">
 			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'themamastore' ) ); ?></span>
